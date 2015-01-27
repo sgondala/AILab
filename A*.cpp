@@ -59,7 +59,7 @@ struct node{
         return 0;
     }*/
     
-    
+        
     int getHeuristic(){
     	int count=0;
     	for (int i=0;i<9;i++){
@@ -135,14 +135,14 @@ void addChildren(node* parentNode){
                 //Newly added
             	
             	//assert(abs(parentNode->h - indexToNode[childIndex]->h) <1);   
-                
+                /*            
                 if(find(closedList.begin(),closedList.end(),indexToNode[childIndex])!=closedList.end()){ // If in closed list
                 	//cout<<"CAME"<<endl;
                 	typeof(closedList.begin()) it = find(closedList.begin(),closedList.end(),indexToNode[childIndex]);
                 	openList.push_back(*it);
                 	closedList.remove(*it);
                 } 
-				
+				*/
             }
         }
     }
