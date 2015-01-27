@@ -8,77 +8,32 @@ map<string,string> parent;
 list<node*> openList,closedList;
 string startString,goalString;
 
+map<string, node*> indexToNodeRev;
+map<string,string> parentRev;
+list<node*> openListRev,closedListRev;
+
 struct node{
     string index;
     int g;
     int h;
-    node(string s,int g){
+    node(string s,int g,bool p){
         index=s;
         this->g=g;
-        h=getHeuristic();
+        h=getHeuristic(p);
     }
     node() {};
     
-    /*
-    int getHeuristic(){  //Not in their positions
+    int getHeuristic(bool p){  //Manhattan Distances P is true for straight thing
         int count=0;
         for(int i=0;i<9;i++){
-            int positionInIndex=find(index.begin(),index.end(),goalString[i])-index.begin();
-            if(i!=positionInIndex)count++;
-        }
-        return count;
-    }
-	*/
-    
-    /*
-    int getHeuristic(){  //Manhattan Distances
-        int count=0;
-        for(int i=0;i<9;i++){
-            int positionInIndex=find(index.begin(),index.end(),goalString[i])-index.begin();
+            int positionInIndex;
+            if(p) {positionInIndex=find(index.begin(),index.end(),goalString[i])-index.begin();}
+            else {positionInIndex=find(index.begin(),index.end(),startString[i])-index.begin();}
             count+=abs(positionInIndex%3 - i%3);
             count+=abs(positionInIndex/3 - i/3);
         }
-        return count;
-    }*/
-    
-
-    /*
-    int getHeuristic(){  //Own Heuristic
-        int count=0;
-        for(int i=0;i<9;i++){
-            int positionInIndex=find(index.begin(),index.end(),goalString[i])-index.begin();
-            if(positionInIndex%3 != i%3){count++;}
-            if(positionInIndex/3 != i/3){count++;}
-        }
-        return count;
-    }*/
-	
-
-	/*
-	int getHeuristic(){  //Manhattan Distances
         return 0;
-    }*/
-    
-    
-    int getHeuristic(){
-    	int count=0;
-    	for (int i=0;i<9;i++){
-    		for(int j=i+1;j<9;j++){
-	            int positionInIndexi=find(index.begin(),index.end(),goalString[i])-index.begin();    			
-	            int positionInIndexj=find(index.begin(),index.end(),goalString[j])-index.begin();
-	            if( (positionInIndexi/3 == positionInIndexj/3) && (positionInIndexi/3==i/3) 
-	            	&& (positionInIndexj/3==j/3) && (positionInIndexi%3>positionInIndexj%3) ){
-	            		count+=2;
-	            }
-	            else if( (positionInIndexi%3 == positionInIndexj%3) && (positionInIndexi%3==i%3) 
-	            	&& (positionInIndexj%3==j%3) && (positionInIndexi/3>positionInIndexj/3) ){
-	            		count+=2;
-	            }    		
-    		}
-    	}
-    	return count;
     }
-	
     
 };
 
@@ -115,15 +70,15 @@ list<string> successors(string s) {
 }
 
 
-void addChildren(node* parentNode){
+void addChildren(node* parentNode,bool p){
     list<string> childrenIndices = successors(parentNode->index);
     for(list<string>::iterator it=childrenIndices.begin(); it!=childrenIndices.end(); it++) {
-    	//assert(abs(parentNode->h - ))
         string childIndex = *it;
         int tempG = parentNode->g + 1;
+
+        if(p){
         if(indexToNode.find(childIndex) == indexToNode.end()) {
-            node *n = new node(childIndex, tempG);
-            //assert(abs(parentNode->h - n->h) <1);
+            node *n = new node(childIndex, tempG, true);
             indexToNode[childIndex] = n;
             parent[childIndex] = parentNode->index;
             openList.push_back(n);
@@ -133,18 +88,41 @@ void addChildren(node* parentNode){
                 indexToNode[childIndex]->g = tempG;
                 parent[childIndex] = parentNode->index;
                 //Newly added
-            	
-            	//assert(abs(parentNode->h - indexToNode[childIndex]->h) <1);   
-                
                 if(find(closedList.begin(),closedList.end(),indexToNode[childIndex])!=closedList.end()){ // If in closed list
-                	//cout<<"CAME"<<endl;
                 	typeof(closedList.begin()) it = find(closedList.begin(),closedList.end(),indexToNode[childIndex]);
                 	openList.push_back(*it);
                 	closedList.remove(*it);
                 } 
-				
+
             }
         }
+        }
+
+        else{
+
+        if(indexToNodeRev.find(childIndex) == indexToNodeRev.end()) {
+            node *n = new node(childIndex, tempG, false);
+            indexToNodeRev[childIndex] = n;
+            parentRev[childIndex] = parentNode->index;
+            openListRev.push_back(n);
+        }
+        else { //Already found
+            if(indexToNodeRev[childIndex]->g > tempG) { //New cost is less than old cost
+                indexToNodeRev[childIndex]->g = tempG;
+                parentRev[childIndex] = parentNode->index;
+                //Newly added
+                if(find(closedListRev.begin(),closedListRev.end(),indexToNodeRev[childIndex])!=closedListRev.end()){ // If in closed list
+                    typeof(closedListRev.begin()) it = find(closedListRev.begin(),closedListRev.end(),indexToNodeRev[childIndex]);
+                    openListRev.push_back(*it);
+                    closedListRev.remove(*it);
+                } 
+
+            }
+        }
+
+
+        }
+
     }
 }
 
@@ -183,9 +161,11 @@ bool reachable(string s)
 
 int main() {
     //Assuming input format is startString, goalString
-    startString = "214783569";
+    //startString = "214783569";
+
+    startString = "123456798";
     node* start;
-    node temp(startString,0); //g for start is 0
+    node temp(startString,0,true); //g for start is 0
     start = &temp;
     goalString = "123456789";
     node* goal;
@@ -193,33 +173,69 @@ int main() {
     if(reachable(startString))cout<<"Reachable"<<endl;
     else {cout<<"Not Reachable"<<endl; return 0;}
     
-    node temp2(goalString,0); //Defining g for goal to be 0 for now
+    node temp2(goalString,0,true); //Defining g for goal to be 0 for now
     goal = &temp2;
-    start->h=start->getHeuristic();
+    start->h=start->getHeuristic(true);
+
+    node* startRev;
+    node tempRev(goalString,0,false); //g for start is 0
+    startRev = &tempRev;
+    node* goalRev;
+    node temp2Rev(startString,0,false); //Defining g for goal to be 0 for now
+    goalRev = &temp2Rev;
+    startRev->h=startRev->getHeuristic(false);    
+
+    //cout<<start->index<<endl;
+
     openList.push_back(start);
+    openListRev.push_back(startRev);
     
-    list<node*>::iterator current; 
+    list<node*>::iterator current,currentRev; 
     
-    int expandedNodeCount = 0;
+    int expandedNodeCount = 0, expandedNodeCountRev = 0;
+    
+    bool foundAll=false;
     while(openList.size() != 0) {
         current = minNode(openList);
+        currentRev = minNode(openListRev);
+
+        //cout<<(*current) ->index<<" "<< (*currentRev) ->index<<endl;
     //    cout<< (*current)->index <<endl;
-        if((*current)->index == goal->index) {
-            break; // TODO
-        }
+    //    if((*current)->index == goal->index) {
+    //        break; // TODO
+    //    }
+
         openList.remove(*current);
         closedList.push_back(*current);
-        addChildren(*current);
+        addChildren(*current, true);
         expandedNodeCount++;
+        
+        openListRev.remove(*currentRev);
+        closedListRev.push_back(*currentRev);
+        addChildren(*currentRev, false);
+        expandedNodeCountRev++;
+
+        //cout<<"i"<<endl; 
+
+        for(typeof(closedList.begin()) itTemp=closedList.begin(); itTemp!=closedList.end(); itTemp++){
+            for(typeof(closedListRev.begin()) itTempRev=closedListRev.begin(); itTempRev!=closedListRev.end(); itTempRev++){
+                if( (*itTemp)->index == (*itTempRev)->index ){
+                    cout<<(*itTemp)->index<<endl; foundAll = true; break;
+                }
+            }
+        }
+
+        if(foundAll) break;
 
     }
 	
-
+/*
     string temp3 = goal->index;
     while(temp3 != start->index) {
         temp3 = parent[temp3];
         cout << temp3 << endl;
     }
-    printf("No. of expanded nodes is %d\n",expandedNodeCount);
+    cout<<"!@#"<<endl; */
+    printf("No. of expanded nodes is %d\n",expandedNodeCount+expandedNodeCountRev);
 	
 }
