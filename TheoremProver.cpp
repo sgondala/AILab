@@ -41,10 +41,12 @@ int FindChar(string str, char token) {
 
 node* ScanInput(string str) {
 	bool isNegation = false;
+	node* parent;
 	if(str[0]=='!') {
 		isNegation = true;
 		str = str.substr(1);
 	}
+
 	if(str.size()!=1 && FindChar(str.substr(1,str.size()-2),',')) {
 		string str1 = str.substr(1,str.size()-2);// Removing the outer brackets
 		int CommaPos = FindChar(str1,',');
@@ -56,8 +58,8 @@ node* ScanInput(string str) {
 		LeftTree = ScanInput(LeftString);
 		//if(RightString[0] = '(') {
 		RightTree = ScanInput(RightString);
-		node* parent = new node(LeftTree, RightTree, isNegation);
-		return parent;	
+		parent = new node(LeftTree, RightTree, isNegation);
+		//return parent;	
 	}
 	
 	else if(str.size()!=1 && FindChar(str.substr(1,str.size()-2),'v')){
@@ -70,8 +72,8 @@ node* ScanInput(string str) {
 		RightTree = ScanInput(RightString); //b, should compute a V b = ((a,f),b)
 		node* tempFalse=new node('f',false);
 		node* tempLeft=new node(LeftTree,tempFalse,false);
-		node* parent = new node(tempLeft, RightTree, isNegation);		
-		return parent;	
+		parent = new node(tempLeft, RightTree, isNegation);		
+		//return parent;	
 	}
 
 	else if(str.size()!=1 && FindChar(str.substr(1,str.size()-2),'^')){
@@ -86,15 +88,24 @@ node* ScanInput(string str) {
 		node* tempLR=new node(RightTree,tempFalse,false);
 		node* tempL=new node(LeftTree,tempLR,false);
 		node* tempFalse2=new node('f',false);
-		node* parent = new node(tempL, tempFalse2, isNegation);		
-		return parent;	
+		parent = new node(tempL, tempFalse2, isNegation);		
+		//return parent;	
 	}
-	
+
 	else {
 		assert(str.size()==1);
-		node* parent = new node(str[0],isNegation);
-		return parent;
+		parent = new node(str[0],isNegation);
+		//return parent;
 	}
+
+	if(isNegation){
+		node* tempFalse = new node('f',false);
+		parent->isNegation=false;
+		node* returnNode = new node(parent, tempFalse, false);
+	}
+
+	else return parent;
+
 }
 
 vector<node*> parts;
@@ -106,7 +117,13 @@ void makeList(node* a){
 	}
 	else if(a->isLeaf){
 		a->isNegation = !(a->isNegation);
-		parts.push_back(a);
+		if(!a->isNegation) {parts.push_back(a);}
+		else {
+			node* tempFalse = new node('f',false);
+			a->isNegation=false;
+			node* temp = new node(a,tempFalse,false);  
+			parts.push_back(temp);
+		}
 		node* temp=new node('f',false);
 		parts.push_back(temp);
 		return;
