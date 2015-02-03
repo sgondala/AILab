@@ -109,6 +109,7 @@ node* ScanInput(string str) {
 }
 
 vector<node*> parts;
+vector<node*> hypothesis;
 
 void makeList(node* a){
 	if(a->isLeaf && a->leaf=='f'){
@@ -221,8 +222,23 @@ int main(int argc, char* argv[]) {
     makeHypothesis();
 
     cout << "hypothesis" << endl;
-    for(int i=0; i<hypothesis.size(); i++) {
-    	cout << nodeToString(hypothesis[i]) << endl;
-    }
 
+    bool gotAnswer=false;
+    
+    while(!gotAnswer){
+	    for(int i=0; i<hypothesis.size(); i++) {
+	    	//cout << nodeToString(hypothesis[i]) << endl;
+	    	if(nodeToString(hypothesis[i])=="f"){gotAnswer=true;break;}
+	    }
+	    printf("Unable to deduce the result, Please provide user input \n");
+	    int number;
+	    printf("Give the number of hypothesis/axioms you want to enter: ");
+	    cin>>number;
+	    for(int i=0;i<number;i++){
+	    	string s;
+	    	parts.push_back(ScanInput(s));
+	    }
+	    hypothesis.clear();
+	    makeHypothesis();
+	}
 }
