@@ -1,4 +1,3 @@
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,19 +24,19 @@ struct node{
 	node(){}
 };
 
-int FindComma(string str) {
+int FindChar(string str, char token) {
 	int count = 0;
-    int IndexComma = 0;
-    for(int i=0; i<str.size(); i++) {
-        char c = str[i];
-        if(c==',' && count==0) {
-            IndexComma = i;
-        }
-        if(c=='(') count++;
-        if(c==')') count--;
-    }
-    //cout << IndexComma << endl;
-    return IndexComma;
+	int IndexChar = 0;
+	for(int i=0; i<str.size(); i++) {
+		char c = str[i];
+		if(c==token && count==0) {
+			IndexChar = i;
+		}
+		if(c=='(') count++;
+		if(c==')') count--;
+	}
+	//cout << IndexComma << endl;
+	return IndexChar;
 }
 
 node* ScanInput(string str) {
@@ -46,9 +45,9 @@ node* ScanInput(string str) {
 		isNegation = true;
 		str = str.substr(1);
 	}
-	if(str.find(',') != string::npos) {
+	if(str.size()!=1 && FindChar(str.substr(1,str.size()-2),',')) {
 		string str1 = str.substr(1,str.size()-2);// Removing the outer brackets
-		int CommaPos = FindComma(str1);
+		int CommaPos = FindChar(str1,',');
 		string LeftString = str1.substr(0,CommaPos);
 		string RightString = str1.substr(CommaPos+1);
 		//cout << LeftString << " " << RightString << endl;
@@ -60,9 +59,39 @@ node* ScanInput(string str) {
 		node* parent = new node(LeftTree, RightTree, isNegation);
 		return parent;	
 	}
+	
+	else if(str.size()!=1 && FindChar(str.substr(1,str.size()-2),'v')){
+		string str1 = str.substr(1,str.size()-2);// Removing the outer brackets
+		int OrPos = FindChar(str1,'v');
+		string LeftString = str1.substr(0,OrPos);
+		string RightString = str1.substr(OrPos+1);
+		node* LeftTree, *RightTree;
+		LeftTree = ScanInput(LeftString); //a
+		RightTree = ScanInput(RightString); //b, should compute a V b = ((a,f),b)
+		node* tempFalse=new node('f',false);
+		node* tempLeft=new node(LeftTree,tempFalse,false);
+		node* parent = new node(tempLeft, RightTree, isNegation);		
+		return parent;	
+	}
+
+	else if(str.size()!=1 && FindChar(str.substr(1,str.size()-2),'^')){
+		string str1 = str.substr(1,str.size()-2);// Removing the outer brackets
+		int AndPos = FindChar(str1,'^');
+		string LeftString = str1.substr(0,AndPos);
+		string RightString = str1.substr(AndPos+1);
+		node* LeftTree, *RightTree;
+		LeftTree = ScanInput(LeftString); //a
+		RightTree = ScanInput(RightString); //b, should compute a ^ b = ((a,(b,f)),f)
+		node* tempFalse=new node('f',false);
+		node* tempLR=new node(RightTree,tempFalse,false);
+		node* tempL=new node(LeftTree,tempLR,false);
+		node* tempFalse2=new node('f',false);
+		node* parent = new node(tempL, tempFalse2, isNegation);		
+		return parent;	
+	}
+	
 	else {
 		assert(str.size()==1);
-		//cout << str[0] << endl;
 		node* parent = new node(str[0],isNegation);
 		return parent;
 	}
@@ -76,9 +105,7 @@ void makeList(node* a){
 		return;
 	}
 	else if(a->isLeaf){
-		//cout<<"HE "<<a->isNegation<<endl;
 		a->isNegation = !(a->isNegation);
-		//cout<<"HE "<<a->isNegation<<endl;
 		parts.push_back(a);
 		node* temp=new node('f',false);
 		parts.push_back(temp);
@@ -91,8 +118,7 @@ void makeList(node* a){
 
 string nodeToString(node* a){
 	string temp="";
-	//cout<<"IS "<<a->isNegation<<endl;
-    if(a->isNegation){temp='~';}
+	if(a->isNegation){temp='~';}
 	if(a->isLeaf){temp+=a->leaf;}
 	else{
 		string temp1=nodeToString(a->left);
@@ -103,16 +129,13 @@ string nodeToString(node* a){
 }
 
 int main(int argc, char* argv[]) {
-    string str;
-    str = argv[1];
-    //str = "((p,q),((!p,q),q))";
-    //cin >> str;
-    node* tree;
-    tree = ScanInput(str);
-    makeList(tree);
-    //cout << nodeToString(tree) << endl;
-    for(int i=0; i<parts.size(); i++) {
-    	cout << nodeToString(parts[i]) << endl;
-    }
+	string str;
+	str = argv[1];
+	node* tree;
+	tree = ScanInput(str);
+	makeList(tree);
+	for(int i=0; i<parts.size(); i++) {
+		cout << nodeToString(parts[i]) << endl;
+	}
 }
 
