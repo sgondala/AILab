@@ -161,7 +161,7 @@ void makeHypothesis() {
 		curr = hypothesis[i];
 		bool right = false;
 		string currString = nodeToString(curr);
-		cout << "currString : " << currString << endl;
+		//cout << "currString : " << currString << endl;
  		vector<node*> newHypothesis;
 		if(!curr->isLeaf) {
 			string currLeft = nodeToString(curr->left);
@@ -173,7 +173,7 @@ void makeHypothesis() {
 
 					if(currLeft == hypString) right = true;
 					if(hypLeft == currString) {
-						cout << "hypString1 : " << hypString << endl;
+						//cout << "hypString1 : " << hypString << endl;
 						//newHypothesis.push_back(hyp->right);
 						addHypothesis(hyp->right, newHypothesis);
 					}					
@@ -194,7 +194,7 @@ void makeHypothesis() {
 					if(hypLeft == currString) {
 						//newHypothesis.push_back(hyp->right);
 						addHypothesis(hyp->right, newHypothesis);
-						cout << "hypString1 : " << hypString << endl;
+						//cout << "hypString1 : " << hypString << endl;
 					}					
 				}
 				else {
@@ -203,7 +203,7 @@ void makeHypothesis() {
 			}
 		}
 		if(right) {
-			cout << "right" << endl;
+			//cout << "right" << endl;
 			addHypothesis(curr->right, newHypothesis);
 			//newHypothesis.push_back(curr->right);
 		}
@@ -238,8 +238,42 @@ int main(int argc, char* argv[]) {
     makeHypothesis();
 
     cout << "hypothesis" << endl;
-    for(int i=0; i<hypothesis.size(); i++) {
+    
+    /*for(int i=0; i<hypothesis.size(); i++) {
     	cout << nodeToString(hypothesis[i]) << endl;
-    }
+    }*/
+
+     bool gotAnswer=false;
+    
+    while(!gotAnswer){
+	    for(int i=0; i<hypothesis.size(); i++) {
+	    	//cout << nodeToString(hypothesis[i]) << endl;
+	    	if(nodeToString(hypothesis[i])=="f"){gotAnswer=true;break;}
+	    }
+	    if(gotAnswer)break;
+	    printf("Unable to deduce the result, Please provide user input \n");
+	    int number;
+	    printf("Give the number of hypothesis/axioms you want to enter: ");
+	    cin>>number;
+	    for(int i=0;i<number;i++){
+	    	string s;
+	    	cin>>s;
+	    	node* temp=ScanInput(s);
+	    	cout<<nodeToString(temp);
+	    	parts.push_back(ScanInput(s));
+	    }
+	    hypothesis.clear();
+		
+		for(int i=0; i<parts.size(); i++) {
+    		string currString = nodeToString(parts[i]);
+    		if(currString != "f") addHypothesis(parts[i],hypothesis);
+    	}
+	    makeHypothesis();
+	}
+
+	for(int i=0; i<hypothesis.size(); i++) {
+	    	cout << nodeToString(hypothesis[i]) << endl;
+	    	//if(nodeToString(hypothesis[i])=="f"){gotAnswer=true;break;}
+	    }
 
 }
