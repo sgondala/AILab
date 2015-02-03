@@ -145,14 +145,84 @@ string nodeToString(node* a){
 	return temp;
 }
 
-int main(int argc, char* argv[]) {
-	string str;
-	str = argv[1];
-	node* tree;
-	tree = ScanInput(str);
-	makeList(tree);
+
+void makeHypothesis() {
+	node* curr;
+	node* hyp;
 	for(int i=0; i<parts.size(); i++) {
-		cout << nodeToString(parts[i]) << endl;
+		curr = parts[i];
+		bool right = false;
+		string currString = nodeToString(curr);
+		cout << "currString : " << currString << endl;
+ 		vector<node*> newHypothesis;
+		if(!curr->isLeaf) {
+			string currLeft = nodeToString(curr->left);
+			for(int j=0; j<hypothesis.size(); j++) {
+				hyp = hypothesis[j];
+				string hypString = nodeToString(hyp);
+				if(!hyp->isLeaf) {
+					string hypLeft = nodeToString(hyp->left);
+
+					if(currLeft == hypString) right = true;
+					if(hypLeft == currString) {
+						cout << "hypString1 : " << hypString << endl;
+						newHypothesis.push_back(hyp->right);
+					}					
+				}
+				else {
+					if(currLeft == hypString) right = true;
+				}
+			}
+			//if(right) newHypothesis.push_back()
+		}
+		else {
+			for(int j=0; j<hypothesis.size(); j++) {
+				hyp = hypothesis[j];
+				string hypString = nodeToString(hyp);
+				if(!hyp->isLeaf) {
+					string hypLeft = nodeToString(hyp->left);
+
+					if(hypLeft == currString) {
+						newHypothesis.push_back(hyp->right);
+						cout << "hypString1 : " << hypString << endl;
+					}					
+				}
+				else {
+					//if(currLeft == hypString) right = true;
+				}
+			}
+		}
+		if(right) {
+			cout << "right" << endl;
+			newHypothesis.push_back(curr->right);
+		}
+
+		for(int i=0; i<newHypothesis.size(); i++) {
+			hypothesis.push_back(newHypothesis[i]);
+		}
+		if(currString != "f") hypothesis.push_back(curr);
 	}
 }
 
+
+int main(int argc, char* argv[]) {
+    string str;
+    str = argv[1];
+    //str = "((p,q),((!p,q),q))";
+    //cin >> str;
+    node* tree;
+    tree = ScanInput(str);
+    makeList(tree);
+    cout << "Parts" << endl;
+    for(int i=0; i<parts.size(); i++) {
+    	cout << nodeToString(parts[i]) << endl;
+    }
+
+    makeHypothesis();
+
+    cout << "hypothesis" << endl;
+    for(int i=0; i<hypothesis.size(); i++) {
+    	cout << nodeToString(hypothesis[i]) << endl;
+    }
+
+}
