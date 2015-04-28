@@ -18,6 +18,8 @@ std::vector<int> input;
 
 std::map<char, std::vector<int> > EncodeGrapheme;
 std::map<string, std::vector<int> > EncodePhoneme;
+std::map<std::vector<int>, char > DecodeGrapheme;
+std::map<std::vector<int>, string > DecodePhoneme;
 
 std::vector<long double> outerDelta;
 std::vector<long double> hiddenDelta;
@@ -47,7 +49,9 @@ std::vector<int> intToBinary(int n, int length) {
 void initialize() {
 	int i = 1;
 	for(char c='A'; c<='Z'; c++) {
-		EncodeGrapheme[c] = intToBinary(i, graphemeLength);
+		std::vector<int> v = intToBinary(i, graphemeLength);
+		EncodeGrapheme[c] = v;
+		DecodeGrapheme[v] = c;
 		i++;
 	}
 
@@ -55,7 +59,9 @@ void initialize() {
 	ifstream ifs("states.txt");
 	string line;
 	while(getline(ifs,line)){
-		EncodePhoneme[line] = intToBinary(i, phonemeLength);
+		std::vector<int> v = intToBinary(i, phonemeLength);
+		EncodePhoneme[line] = v;
+		DecodePhoneme[v] = line;
 		i++;
 	}
 
@@ -163,8 +169,8 @@ int main() {
 	int examplesRead = 0;
 
 	while(getline(fp, line)) {
-		examplesRead++;
-		if(examplesRead == 1000) break;
+		// examplesRead++;	
+		// if(examplesRead == 1000) break;
 		std::istringstream iss(line);
 		iss >> firstWord;
 
@@ -239,7 +245,7 @@ int main() {
 	examplesRead = 0;
 	while(getline(fp1, line)) {
 		// examplesRead++;
-		// if(examplesRead == 2000) break;
+		// if(examplesRead == 0) break;
 		std::istringstream iss(line);
 		iss >> firstWord;
 
@@ -294,12 +300,12 @@ int main() {
 		// bool flag = false;
 		long double change = 0L;
 		int count = 0;
-		for (int i = 0; i < phonemeLength; ++i)
+		for (int i = 0; i < numLength; ++i)
 		{
 			bool flag1 = false;
-			for (int j = 0; j < numLength; ++j)
+			for (int j = 0; j < phonemeLength; ++j)
 			{
-				int index = i*numLength + j;
+				int index = i*phonemeLength + j;
 				if( abs((long double)v2[index] - outerOutput[index]) >= 0.5) {
 					flag1 = true;
 				}
@@ -317,6 +323,47 @@ int main() {
 	cout << countTotal << endl;
 	cout << examplesRead << endl;
 	cout << 100*(countTotal/(float)examplesRead) << endl;
-	// cout << 
+
+	// // if(!input) return;
+	// cout << "Give input\n";
+	// cin >> firstWord; 
+
+	// std::vector<int> v1, tmpVec;
+	// for (int i = 0; i < firstWord.size(); ++i)
+	// {
+	// 	tmpVec = EncodeGrapheme[firstWord[i]];
+	// 	v1.insert(v1.end(), tmpVec.begin(), tmpVec.end());
+	// }
+	// int j = firstWord.size();
+	// tmpVec = std::vector<int>(graphemeLength, 0);
+	// while(j!=numLength) {
+	// 	v1.insert(v1.end(), tmpVec.begin(), tmpVec.end());
+	// 	j++;
+	// }
+	// // for (std::vector<int>::iterator i = v1.begin(); i != v1.end(); ++i)
+	// // {
+	// // 	cout << *i;
+	// // }
+	// // cout << endl;
+
+	// input = v1;
+	// feedForward();
+
+	// for (int i = 0; i < firstWord.size(); ++i)
+	// {
+	// 	std::vector<int> output;
+	// 	for (int j = 0; j < phonemeLength; ++j)
+	// 	{
+	// 		int index = i*phonemeLength + j;
+	// 		output.push_back(((outerOutput[index]) >= 0.5) ? 1 : 0);
+	// 	}
+	// 	// for (int j = 0; j < output.size(); ++j)
+	// 	// {
+	// 	// 	cout << output[j];
+	// 	// }
+	// 	// cout << endl;
+	// 	cout << DecodePhoneme[output] << " ";
+	}
+	cout << endl;
 
 }
