@@ -17,12 +17,23 @@ void training(int** augmentedNegatedX, int* weights, int numInputs) {
       for(int j = 0; j <= numInputs; ++j) {
         product += augmentedNegatedX[i][j] * weights[j];
       }
-      if(product <= 0) {
+       if(product <= 0) {
+         for(int j = 0; j <= numInputs; ++j) {
+           weights[j] += augmentedNegatedX[i][j];
+         }
+         break;
+       }
+      /*
+      float val = 1/(1+exp(-1*product));
+      float error = val-1;
+      std::cout << "error " << error << std::endl;
+      if(error > 0.1) {
         for(int j = 0; j <= numInputs; ++j) {
-          weights[j] += augmentedNegatedX[i][j];
+          weights[j] += 1*error*val*(1-val)*augmentedNegatedX[i][j];
         }
         break;
-      }
+      } 
+      */
     }
     if(i == numRows) {
       std::cout<< iter << '\n';
