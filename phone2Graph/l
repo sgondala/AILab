@@ -1,0 +1,1423 @@
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h: In instantiation of ‘std::reverse_iterator<_Iterator>::reverse_iterator(const std::reverse_iterator<_Iter>&) [with _Iter = __gnu_cxx::__normal_iterator<char*, std::vector<char> >; _Iterator = __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >]’:
+viterbi.cpp:120:56:   required from here
+/usr/include/c++/4.8/bits/stl_iterator.h:140:22: error: no matching function for call to ‘__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >::__normal_iterator(std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type)’
+  : current(__x.base()) { }
+                      ^
+/usr/include/c++/4.8/bits/stl_iterator.h:140:22: note: candidates are:
+/usr/include/c++/4.8/bits/stl_iterator.h:730:9: note: template<class _Iter> __gnu_cxx::__normal_iterator<_Iterator, _Container>::__normal_iterator(const __gnu_cxx::__normal_iterator<_Iter, typename __gnu_cxx::__enable_if<std::__are_same<_Iter, typename _Container::pointer>::__value, _Container>::__type>&)
+         __normal_iterator(const __normal_iterator<_Iter,
+         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:730:9: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/stl_iterator.h: In substitution of ‘template<class _Iter> __gnu_cxx::__normal_iterator<_Iterator, _Container>::__normal_iterator(const __gnu_cxx::__normal_iterator<_Iter, typename __gnu_cxx::__enable_if<std::__are_same<_Iter, typename _Container::pointer>::__value, _Container>::__type>&) [with _Iter = char*]’:
+/usr/include/c++/4.8/bits/stl_iterator.h:140:22:   required from ‘std::reverse_iterator<_Iterator>::reverse_iterator(const std::reverse_iterator<_Iter>&) [with _Iter = __gnu_cxx::__normal_iterator<char*, std::vector<char> >; _Iterator = __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >]’
+viterbi.cpp:120:56:   required from here
+/usr/include/c++/4.8/bits/stl_iterator.h:730:9: error: no type named ‘__type’ in ‘struct __gnu_cxx::__enable_if<false, std::vector<std::basic_string<char> > >’
+/usr/include/c++/4.8/bits/stl_iterator.h: In instantiation of ‘std::reverse_iterator<_Iterator>::reverse_iterator(const std::reverse_iterator<_Iter>&) [with _Iter = __gnu_cxx::__normal_iterator<char*, std::vector<char> >; _Iterator = __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >]’:
+viterbi.cpp:120:56:   required from here
+/usr/include/c++/4.8/bits/stl_iterator.h:726:7: note: __gnu_cxx::__normal_iterator<_Iterator, _Container>::__normal_iterator(const _Iterator&) [with _Iterator = std::basic_string<char>*; _Container = std::vector<std::basic_string<char> >]
+       __normal_iterator(const _Iterator& __i) : _M_current(__i) { }
+       ^
+/usr/include/c++/4.8/bits/stl_iterator.h:726:7: note:   no known conversion for argument 1 from ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’ to ‘std::basic_string<char>* const&’
+/usr/include/c++/4.8/bits/stl_iterator.h:723:26: note: constexpr __gnu_cxx::__normal_iterator<_Iterator, _Container>::__normal_iterator() [with _Iterator = std::basic_string<char>*; _Container = std::vector<std::basic_string<char> >]
+       _GLIBCXX_CONSTEXPR __normal_iterator() : _M_current(_Iterator()) { }
+                          ^
+/usr/include/c++/4.8/bits/stl_iterator.h:723:26: note:   candidate expects 0 arguments, 1 provided
+/usr/include/c++/4.8/bits/stl_iterator.h:708:11: note: constexpr __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >::__normal_iterator(const __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >&)
+     class __normal_iterator
+           ^
+/usr/include/c++/4.8/bits/stl_iterator.h:708:11: note:   no known conversion for argument 1 from ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’ to ‘const __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >&’
+/usr/include/c++/4.8/bits/stl_iterator.h:708:11: note: constexpr __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >::__normal_iterator(__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >&&)
+/usr/include/c++/4.8/bits/stl_iterator.h:708:11: note:   no known conversion for argument 1 from ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’ to ‘__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >&&’
+/usr/include/c++/4.8/bits/stl_iterator.h: In instantiation of ‘bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&) [with _IteratorL = __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >; _IteratorR = __gnu_cxx::__normal_iterator<char*, std::vector<char> >]’:
+/usr/include/c++/4.8/bits/stl_iterator.h:355:20:   required from ‘bool std::operator!=(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&) [with _IteratorL = __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >; _IteratorR = __gnu_cxx::__normal_iterator<char*, std::vector<char> >]’
+viterbi.cpp:120:72:   required from here
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: error: no match for ‘operator==’ (operand types are ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ and ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’)
+     { return __x.base() == __y.base(); }
+                         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note: candidates are:
+In file included from /usr/include/c++/4.8/unordered_set:48:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:116,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/unordered_set.h:1283:5: note: template<class _Value, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>&, const std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>&)
+     operator==(const unordered_multiset<_Value, _Hash, _Pred, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/unordered_set.h:1283:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::unordered_multiset<_Value, _Hash, _Pred, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/unordered_set:48:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:116,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/unordered_set.h:1271:5: note: template<class _Value, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_set<_Value, _Hash, _Pred, _Alloc>&, const std::unordered_set<_Value, _Hash, _Pred, _Alloc>&)
+     operator==(const unordered_set<_Value, _Hash, _Pred, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/unordered_set.h:1271:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::unordered_set<_Value, _Hash, _Pred, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/unordered_map:48:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:115,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/unordered_map.h:1400:5: note: template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>&, const std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>&)
+     operator==(const unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/unordered_map.h:1400:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::unordered_multimap<_Key, _Tp, _Hash, _Pred, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/unordered_map:48:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:115,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/unordered_map.h:1388:5: note: template<class _Key, class _Tp, class _Hash, class _Pred, class _Alloc> bool std::operator==(const std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>&, const std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>&)
+     operator==(const unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/unordered_map.h:1388:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::unordered_map<_Key, _Tp, _Hash, _Pred, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:109:0,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/scoped_allocator:443:5: note: template<class _OutA1, class _OutA2, class ... _InA> bool std::operator==(const std::scoped_allocator_adaptor<_OutA1, _InA ...>&, const std::scoped_allocator_adaptor<_InnerHead, _InnerTail ...>&)
+     operator==(const scoped_allocator_adaptor<_OutA1, _InA...>& __a,
+     ^
+/usr/include/c++/4.8/scoped_allocator:443:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::scoped_allocator_adaptor<_OutA1, _InA ...>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:1810:5: note: template<class _Bi_iter, class _Alloc> bool std::operator==(const std::match_results<_FwdIterT, _Alloc>&, const std::match_results<_FwdIterT, _Alloc>&)
+     operator==(const match_results<_Bi_iter, _Alloc>& __m1,
+     ^
+/usr/include/c++/4.8/bits/regex.h:1810:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::match_results<_FwdIterT, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:1306:5: note: template<class _Bi_iter> bool std::operator==(const std::sub_match<_BiIter>&, const typename std::iterator_traits<_Iter>::value_type&)
+     operator==(const sub_match<_Bi_iter>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/regex.h:1306:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::sub_match<_BiIter>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:1226:5: note: template<class _Bi_iter> bool std::operator==(const typename std::iterator_traits<_Iter>::value_type&, const std::sub_match<_BiIter>&)
+     operator==(typename iterator_traits<_Bi_iter>::value_type const& __lhs,
+     ^
+/usr/include/c++/4.8/bits/regex.h:1226:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’ is not derived from ‘const std::sub_match<_BiIter>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:1152:5: note: template<class _Bi_iter> bool std::operator==(const std::sub_match<_BiIter>&, const typename std::iterator_traits<_Iter>::value_type*)
+     operator==(const sub_match<_Bi_iter>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/regex.h:1152:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::sub_match<_BiIter>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:1078:5: note: template<class _Bi_iter> bool std::operator==(const typename std::iterator_traits<_Iter>::value_type*, const std::sub_match<_BiIter>&)
+     operator==(typename iterator_traits<_Bi_iter>::value_type const* __lhs,
+     ^
+/usr/include/c++/4.8/bits/regex.h:1078:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   mismatched types ‘const typename std::iterator_traits<_Iter>::value_type*’ and ‘__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:1004:5: note: template<class _Bi_iter, class _Ch_traits, class _Ch_alloc> bool std::operator==(const std::sub_match<_BiIter>&, std::__sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>&)
+     operator==(const sub_match<_Bi_iter>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/regex.h:1004:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::sub_match<_BiIter>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:930:5: note: template<class _Bi_iter, class _Ch_traits, class _Ch_alloc> bool std::operator==(std::__sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>&, const std::sub_match<_BiIter>&)
+     operator==(const __sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/regex.h:930:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘std::__sub_match_string<_Bi_iter, _Ch_traits, _Ch_alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/regex:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:108,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/regex.h:857:5: note: template<class _BiIter> bool std::operator==(const std::sub_match<_BiIter>&, const std::sub_match<_BiIter>&)
+     operator==(const sub_match<_BiIter>& __lhs, const sub_match<_BiIter>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/regex.h:857:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::sub_match<_BiIter>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/forward_list:40:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:102,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/forward_list.tcc:387:5: note: template<class _Tp, class _Alloc> bool std::operator==(const std::forward_list<_Tp, _Alloc>&, const std::forward_list<_Tp, _Alloc>&)
+     operator==(const forward_list<_Tp, _Alloc>& __lx,
+     ^
+/usr/include/c++/4.8/bits/forward_list.tcc:387:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::forward_list<_Tp, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/forward_list:38:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:102,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/forward_list.h:258:5: note: template<class _Tp> bool std::operator==(const std::_Fwd_list_iterator<_Tp>&, const std::_Fwd_list_const_iterator<_Tp>&)
+     operator==(const _Fwd_list_iterator<_Tp>& __x,
+     ^
+/usr/include/c++/4.8/bits/forward_list.h:258:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Fwd_list_iterator<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/mutex:43:0,
+                 from /usr/include/c++/4.8/condition_variable:39,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:101,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/system_error:279:3: note: bool std::operator==(const std::error_condition&, const std::error_condition&)
+   operator==(const error_condition& __lhs,
+   ^
+/usr/include/c++/4.8/system_error:279:3: note:   no known conversion for argument 1 from ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ to ‘const std::error_condition&’
+/usr/include/c++/4.8/system_error:272:3: note: bool std::operator==(const std::error_condition&, const std::error_code&)
+   operator==(const error_condition& __lhs, const error_code& __rhs) noexcept
+   ^
+/usr/include/c++/4.8/system_error:272:3: note:   no known conversion for argument 1 from ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ to ‘const std::error_condition&’
+/usr/include/c++/4.8/system_error:265:3: note: bool std::operator==(const std::error_code&, const std::error_condition&)
+   operator==(const error_code& __lhs, const error_condition& __rhs) noexcept
+   ^
+/usr/include/c++/4.8/system_error:265:3: note:   no known conversion for argument 1 from ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ to ‘const std::error_code&’
+/usr/include/c++/4.8/system_error:260:3: note: bool std::operator==(const std::error_code&, const std::error_code&)
+   operator==(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^
+/usr/include/c++/4.8/system_error:260:3: note:   no known conversion for argument 1 from ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ to ‘const std::error_code&’
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94:0,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/valarray:1179:1: note: template<class _Tp> std::_Expr<std::_BinClos<std::__equal_to, std::_Constant, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const _Tp&, const std::valarray<_Tp>&)
+ _DEFINE_BINARY_OPERATOR(==, __equal_to)
+ ^
+/usr/include/c++/4.8/valarray:1179:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’ is not derived from ‘const std::valarray<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94:0,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/valarray:1179:1: note: template<class _Tp> std::_Expr<std::_BinClos<std::__equal_to, std::_ValArray, std::_Constant, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const std::valarray<_Tp>&, const _Tp&)
+ _DEFINE_BINARY_OPERATOR(==, __equal_to)
+ ^
+/usr/include/c++/4.8/valarray:1179:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::valarray<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94:0,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/valarray:1179:1: note: template<class _Tp> std::_Expr<std::_BinClos<std::__equal_to, std::_ValArray, std::_ValArray, _Tp, _Tp>, typename std::__fun<std::__equal_to, _Tp>::result_type> std::operator==(const std::valarray<_Tp>&, const std::valarray<_Tp>&)
+ _DEFINE_BINARY_OPERATOR(==, __equal_to)
+ ^
+/usr/include/c++/4.8/valarray:1179:1: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::valarray<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/valarray:587:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note: template<class _Dom> std::_Expr<std::_BinClos<std::__equal_to, std::_ValArray, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::valarray<typename _Dom::value_type>&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+     ^
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::valarray<typename _Dom::value_type>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/valarray:587:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note: template<class _Dom> std::_Expr<std::_BinClos<std::__equal_to, std::_Expr, std::_ValArray, _Dom, typename _Dom::value_type>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::valarray<typename _Dom::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+     ^
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/valarray:587:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note: template<class _Dom> std::_Expr<std::_BinClos<std::__equal_to, std::_Constant, std::_Expr, typename _Dom::value_type, _Dom>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const typename _Dom::value_type&, const std::_Expr<_Dom1, typename _Dom1::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+     ^
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/valarray:587:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note: template<class _Dom> std::_Expr<std::_BinClos<std::__equal_to, std::_Expr, std::_Constant, _Dom, typename _Dom::value_type>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const typename _Dom::value_type&)
+     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+     ^
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/valarray:587:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:94,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note: template<class _Dom1, class _Dom2> std::_Expr<std::_BinClos<std::__equal_to, std::_Expr, std::_Expr, _Dom1, _Dom2>, typename std::__fun<std::__equal_to, typename _Dom1::value_type>::result_type> std::operator==(const std::_Expr<_Dom1, typename _Dom1::value_type>&, const std::_Expr<_Dom2, typename _Dom2::value_type>&)
+     _DEFINE_EXPR_BINARY_OPERATOR(==, __equal_to)
+     ^
+/usr/include/c++/4.8/bits/valarray_after.h:414:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Expr<_Dom1, typename _Dom1::value_type>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/stack:61:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:88,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_stack.h:243:5: note: template<class _Tp, class _Seq> bool std::operator==(const std::stack<_Tp, _Seq>&, const std::stack<_Tp, _Seq>&)
+     operator==(const stack<_Tp, _Seq>& __x, const stack<_Tp, _Seq>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_stack.h:243:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::stack<_Tp, _Seq>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/set:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:86,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_multiset.h:739:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator==(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multiset.h:739:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/set:61:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:86,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_set.h:754:5: note: template<class _Key, class _Compare, class _Alloc> bool std::operator==(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator==(const set<_Key, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_set.h:754:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/queue:64:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:85,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_queue.h:268:5: note: template<class _Tp, class _Seq> bool std::operator==(const std::queue<_Tp, _Seq>&, const std::queue<_Tp, _Seq>&)
+     operator==(const queue<_Tp, _Seq>& __x, const queue<_Tp, _Seq>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_queue.h:268:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::queue<_Tp, _Seq>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/memory:82:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/shared_ptr.h:338:5: note: template<class _Tp> bool std::operator==(std::nullptr_t, const std::shared_ptr<_Tp1>&)
+     operator==(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^
+/usr/include/c++/4.8/bits/shared_ptr.h:338:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   cannot convert ‘(& __x)->std::reverse_iterator<_Iterator>::base<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >()’ (type ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’) to type ‘std::nullptr_t’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/memory:82:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/shared_ptr.h:333:5: note: template<class _Tp> bool std::operator==(const std::shared_ptr<_Tp1>&, std::nullptr_t)
+     operator==(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.8/bits/shared_ptr.h:333:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::shared_ptr<_Tp1>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/memory:82:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/shared_ptr.h:327:5: note: template<class _Tp1, class _Tp2> bool std::operator==(const std::shared_ptr<_Tp1>&, const std::shared_ptr<_Tp2>&)
+     operator==(const shared_ptr<_Tp1>& __a,
+     ^
+/usr/include/c++/4.8/bits/shared_ptr.h:327:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::shared_ptr<_Tp1>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/4.8/memory:82,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/shared_ptr_base.h:1040:5: note: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator==(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^
+/usr/include/c++/4.8/bits/shared_ptr_base.h:1040:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   cannot convert ‘(& __x)->std::reverse_iterator<_Iterator>::base<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >()’ (type ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’) to type ‘std::nullptr_t’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/4.8/memory:82,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/shared_ptr_base.h:1035:5: note: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator==(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.8/bits/shared_ptr_base.h:1035:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/bits/shared_ptr.h:52:0,
+                 from /usr/include/c++/4.8/memory:82,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/shared_ptr_base.h:1029:5: note: template<class _Tp1, class _Tp2, __gnu_cxx::_Lock_policy _Lp> bool std::operator==(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator==(const __shared_ptr<_Tp1, _Lp>& __a,
+     ^
+/usr/include/c++/4.8/bits/shared_ptr_base.h:1029:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/memory:81:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/unique_ptr.h:500:5: note: template<class _Tp, class _Dp> bool std::operator==(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator==(nullptr_t, const unique_ptr<_Tp, _Dp>& __x) noexcept
+     ^
+/usr/include/c++/4.8/bits/unique_ptr.h:500:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   cannot convert ‘(& __x)->std::reverse_iterator<_Iterator>::base<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >()’ (type ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’) to type ‘std::nullptr_t’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/memory:81:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/unique_ptr.h:495:5: note: template<class _Tp, class _Dp> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator==(const unique_ptr<_Tp, _Dp>& __x, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.8/bits/unique_ptr.h:495:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/memory:81:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:81,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/unique_ptr.h:489:5: note: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator==(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator==(const unique_ptr<_Tp, _Dp>& __x,
+     ^
+/usr/include/c++/4.8/bits/unique_ptr.h:489:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/map:62:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:80,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_multimap.h:864:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator==(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_multimap.h:864:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/map:61:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:80,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_map.h:962:5: note: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator==(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator==(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_map.h:962:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:80,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_tree.h:907:5: note: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator==(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator==(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:907:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/map:60:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:80,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_tree.h:310:5: note: template<class _Val> bool std::operator==(const std::_Rb_tree_iterator<_Tp>&, const std::_Rb_tree_const_iterator<_Val>&)
+     operator==(const _Rb_tree_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_tree.h:310:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Rb_tree_iterator<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:78,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_list.h:1602:5: note: template<class _Tp, class _Alloc> bool std::operator==(const std::list<_Tp, _Alloc>&, const std::list<_Tp, _Alloc>&)
+     operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:1602:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::list<_Tp, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/list:63:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:78,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_list.h:276:5: note: template<class _Val> bool std::operator==(const std::_List_iterator<_Tp>&, const std::_List_const_iterator<_Val>&)
+     operator==(const _List_iterator<_Val>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_list.h:276:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_List_iterator<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/iterator:66:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:76,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stream_iterator.h:130:5: note: template<class _Tp, class _CharT, class _Traits, class _Dist> bool std::operator==(const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&, const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>&)
+     operator==(const istream_iterator<_Tp, _CharT, _Traits, _Dist>& __x,
+     ^
+/usr/include/c++/4.8/bits/stream_iterator.h:130:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::istream_iterator<_Tp, _CharT, _Traits, _Dist>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/deque:64:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:67,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_deque.h:1957:5: note: template<class _Tp, class _Alloc> bool std::operator==(const std::deque<_Tp, _Alloc>&, const std::deque<_Tp, _Alloc>&)
+     operator==(const deque<_Tp, _Alloc>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_deque.h:1957:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::deque<_Tp, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/deque:64:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:67,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_deque.h:254:5: note: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> bool std::operator==(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator==(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_deque.h:254:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/deque:64:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:67,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_deque.h:247:5: note: template<class _Tp, class _Ref, class _Ptr> bool std::operator==(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator==(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_deque.h:247:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:64,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/functional:2536:5: note: template<class _Res, class ... _Args> bool std::operator==(std::nullptr_t, const std::function<_Res(_ArgTypes ...)>&)
+     operator==(nullptr_t, const function<_Res(_Args...)>& __f) noexcept
+     ^
+/usr/include/c++/4.8/functional:2536:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   cannot convert ‘(& __x)->std::reverse_iterator<_Iterator>::base<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >()’ (type ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’) to type ‘std::nullptr_t’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/bits/stl_algo.h:66:0,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:64,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/functional:2530:5: note: template<class _Res, class ... _Args> bool std::operator==(const std::function<_Res(_ArgTypes ...)>&, std::nullptr_t)
+     operator==(const function<_Res(_Args...)>& __f, nullptr_t) noexcept
+     ^
+/usr/include/c++/4.8/functional:2530:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::function<_Res(_ArgTypes ...)>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/functional:55:0,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:66,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:64,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/tuple:811:5: note: template<class ... _TElements, class ... _UElements> constexpr bool std::operator==(const std::tuple<_Elements ...>&, const std::tuple<_Elements ...>&)
+     operator==(const tuple<_TElements...>& __t,
+     ^
+/usr/include/c++/4.8/tuple:811:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::tuple<_Elements ...>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/tuple:39:0,
+                 from /usr/include/c++/4.8/functional:55,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:66,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:64,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/array:228:5: note: template<class _Tp, long unsigned int _Nm> bool std::operator==(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator==(const array<_Tp, _Nm>& __one, const array<_Tp, _Nm>& __two)
+     ^
+/usr/include/c++/4.8/array:228:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::array<_Tp, _Nm>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/random:52:0,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:64,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/random.tcc:2030:5: note: template<class _RealType1> bool std::operator==(const std::normal_distribution<_RealType>&, const std::normal_distribution<_RealType>&)
+     operator==(const std::normal_distribution<_RealType>& __d1,
+     ^
+/usr/include/c++/4.8/bits/random.tcc:2030:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::normal_distribution<_RealType>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/vector:64:0,
+                 from /usr/include/c++/4.8/bits/random.h:34,
+                 from /usr/include/c++/4.8/random:50,
+                 from /usr/include/c++/4.8/bits/stl_algo.h:65,
+                 from /usr/include/c++/4.8/algorithm:62,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:64,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_vector.h:1404:5: note: template<class _Tp, class _Alloc> bool std::operator==(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator==(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_vector.h:1404:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/ccomplex:38:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/complex:466:5: note: template<class _Tp> constexpr bool std::operator==(const _Tp&, const std::complex<_Tp>&)
+     operator==(const _Tp& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.8/complex:466:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<char*, std::vector<char> > >::iterator_type {aka __gnu_cxx::__normal_iterator<char*, std::vector<char> >}’ is not derived from ‘const std::complex<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/ccomplex:38:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/complex:461:5: note: template<class _Tp> constexpr bool std::operator==(const std::complex<_Tp>&, const _Tp&)
+     operator==(const complex<_Tp>& __x, const _Tp& __y)
+     ^
+/usr/include/c++/4.8/complex:461:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::complex<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/ccomplex:38:0,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/complex:456:5: note: template<class _Tp> constexpr bool std::operator==(const std::complex<_Tp>&, const std::complex<_Tp>&)
+     operator==(const complex<_Tp>& __x, const complex<_Tp>& __y)
+     ^
+/usr/include/c++/4.8/complex:456:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::complex<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/bits/locale_facets.h:48:0,
+                 from /usr/include/c++/4.8/bits/basic_ios.h:37,
+                 from /usr/include/c++/4.8/ios:44,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/streambuf_iterator.h:204:5: note: template<class _CharT, class _Traits> bool std::operator==(const std::istreambuf_iterator<_CharT, _Traits>&, const std::istreambuf_iterator<_CharT, _Traits>&)
+     operator==(const istreambuf_iterator<_CharT, _Traits>& __a,
+     ^
+/usr/include/c++/4.8/bits/streambuf_iterator.h:204:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::istreambuf_iterator<_CharT, _Traits>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2519:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2519:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2507:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const _CharT*, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const _CharT* __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2507:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   mismatched types ‘const _CharT*’ and ‘__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2493:5: note: template<class _CharT> typename __gnu_cxx::__enable_if<std::__is_char<_Tp>::__value, bool>::__type std::operator==(const std::basic_string<_CharT>&, const std::basic_string<_CharT>&)
+     operator==(const basic_string<_CharT>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2493:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::basic_string<_CharT>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/string:52:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/basic_string.h:2486:5: note: template<class _CharT, class _Traits, class _Alloc> bool std::operator==(const std::basic_string<_CharT, _Traits, _Alloc>&, const std::basic_string<_CharT, _Traits, _Alloc>&)
+     operator==(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/basic_string.h:2486:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::basic_string<_CharT, _Traits, _Alloc>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:133:5: note: template<class _Tp> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_CharT>&)
+     operator==(const allocator<_Tp>&, const allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:133:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::allocator<_CharT>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/string:41:0,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/allocator.h:128:5: note: template<class _T1, class _T2> bool std::operator==(const std::allocator<_CharT>&, const std::allocator<_T2>&)
+     operator==(const allocator<_T1>&, const allocator<_T2>&)
+     ^
+/usr/include/c++/4.8/bits/allocator.h:128:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::allocator<_CharT>’
+     { return __x.base() == __y.base(); }
+                         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1037:5: note: template<class _Iterator> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_Iterator>&)
+     operator==(const move_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1037:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::move_iterator<_Iterator>’
+     { return __x.base() == __y.base(); }
+                         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1031:5: note: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::move_iterator<_Iterator>&, const std::move_iterator<_IteratorR>&)
+     operator==(const move_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:1031:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::move_iterator<_Iterator>’
+     { return __x.base() == __y.base(); }
+                         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:341:5: note: template<class _IteratorL, class _IteratorR> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator==(const reverse_iterator<_IteratorL>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:341:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+     { return __x.base() == __y.base(); }
+                         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:291:5: note: template<class _Iterator> bool std::operator==(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator==(const reverse_iterator<_Iterator>& __x,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:291:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:64:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_pair.h:214:5: note: template<class _T1, class _T2> constexpr bool std::operator==(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator==(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^
+/usr/include/c++/4.8/bits/stl_pair.h:214:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::pair<_T1, _T2>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/c++/4.8/iosfwd:40:0,
+                 from /usr/include/c++/4.8/ios:38,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/postypes.h:216:5: note: template<class _StateT> bool std::operator==(const std::fpos<_StateT>&, const std::fpos<_StateT>&)
+     operator==(const fpos<_StateT>& __lhs, const fpos<_StateT>& __rhs)
+     ^
+/usr/include/c++/4.8/bits/postypes.h:216:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const std::fpos<_StateT>’
+     { return __x.base() == __y.base(); }
+                         ^
+In file included from /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/4.8/bits/allocator.h:46,
+                 from /usr/include/c++/4.8/string:41,
+                 from /usr/include/c++/4.8/bits/locale_classes.h:40,
+                 from /usr/include/c++/4.8/bits/ios_base.h:41,
+                 from /usr/include/c++/4.8/ios:42,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/ext/new_allocator.h:139:5: note: template<class _Tp> bool __gnu_cxx::operator==(const __gnu_cxx::new_allocator<_Tp>&, const __gnu_cxx::new_allocator<_Tp>&)
+     operator==(const new_allocator<_Tp>&, const new_allocator<_Tp>&)
+     ^
+/usr/include/c++/4.8/ext/new_allocator.h:139:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/4.8/bits/stl_algobase.h:67:0,
+                 from /usr/include/c++/4.8/bits/char_traits.h:39,
+                 from /usr/include/c++/4.8/ios:40,
+                 from /usr/include/c++/4.8/istream:38,
+                 from /usr/include/c++/4.8/sstream:38,
+                 from /usr/include/c++/4.8/complex:45,
+                 from /usr/include/c++/4.8/ccomplex:38,
+                 from /usr/include/x86_64-linux-gnu/c++/4.8/bits/stdc++.h:52,
+                 from viterbi.cpp:1:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   ‘std::reverse_iterator<__gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > > >::iterator_type {aka __gnu_cxx::__normal_iterator<std::basic_string<char>*, std::vector<std::basic_string<char> > >}’ is not derived from ‘const __gnu_cxx::new_allocator<_Tp>’
+     { return __x.base() == __y.base(); }
+                         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:811:5: note: template<class _Iterator, class _Container> bool __gnu_cxx::operator==(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator==(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:811:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   deduced conflicting types for parameter ‘_Iterator’ (‘std::basic_string<char>*’ and ‘char*’)
+     { return __x.base() == __y.base(); }
+                         ^
+/usr/include/c++/4.8/bits/stl_iterator.h:805:5: note: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator==(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator==(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^
+/usr/include/c++/4.8/bits/stl_iterator.h:805:5: note:   template argument deduction/substitution failed:
+/usr/include/c++/4.8/bits/stl_iterator.h:343:25: note:   deduced conflicting types for parameter ‘_Container’ (‘std::vector<std::basic_string<char> >’ and ‘std::vector<char>’)
+     { return __x.base() == __y.base(); }
+                         ^
